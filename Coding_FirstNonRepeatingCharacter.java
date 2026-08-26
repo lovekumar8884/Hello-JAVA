@@ -25,6 +25,29 @@
  *      -> Confirm requirement; if case-insensitive, normalise with
  *         Character.toLowerCase(c).
  *
+ * ============================================================================
+ * HOW MERGE() WORKS:
+ *
+ *   countMap.merge(c, 1, Integer::sum);
+ *
+ *   Meaning:
+ *
+ *   1. If the key does NOT exist:
+ *         insert the key with value 1.
+ *
+ *   2. If the key ALREADY exists:
+ *         combine old value + new value using Integer::sum.
+ *
+ *   In simple if/else form:
+ *
+ *       if (countMap.containsKey(c)) {
+ *           countMap.put(c, countMap.get(c) + 1);
+ *       } else {
+ *           countMap.put(c, 1);
+ *       }
+ *
+ *   So merge() is very useful for frequency counting.
+ *
  * KEY POINTS TO REMEMBER:
  *   ⭐ First non-repeating != first char with count 1 in a HashMap.
  *     Order matters → use LinkedHashMap or a second pass over the string.
