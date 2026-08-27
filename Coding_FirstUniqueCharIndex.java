@@ -46,4 +46,19 @@ public class Coding_FirstUniqueCharIndex {
         }
         return -1;
     }
+/*
+ * public int firstUniqChar(String s) {
+ *     if(s==null || s.isEmpty()) return -1;
+ *     Map<Character, Integer> countMap = new LinkedHashMap<>();
+ *     for(char c : s.toCharArray()) countMap.merge(c, 1, Integer::sum);
+ *     for(int i = 0; i < s.length(); i++)
+ *     {
+ *         if(countMap.get(s.charAt(i))==1)
+ *             return i;
+ *
+ *     }
+ *     return -1;
+ *
+ * }
+ */
 }
